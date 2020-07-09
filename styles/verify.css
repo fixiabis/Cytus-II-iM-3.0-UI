@@ -1,0 +1,13 @@
+#analyze-line-1 {
+    animation: analyze-line 2s infinite linear;
+}
+
+#analyze-line-2 {
+    animation: analyze-line 2s 1s infinite linear;
+}
+
+@keyframes analyze-line {
+    50% {
+        opacity: 0;
+    }
+}

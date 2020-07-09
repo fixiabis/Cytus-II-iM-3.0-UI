@@ -1,0 +1,65 @@
+#rolling-dots {
+    animation: rolling-dots 2s infinite linear;
+}
+
+@keyframes rolling-dots {
+    from {
+        stroke-dashoffset: 122;
+    }
+}
+
+#account-field-container,
+#password-field-container {
+    position: absolute;
+    width: 200px;
+    height: 25px;
+    animation: field-container 0.25s infinite linear;
+    background-position: 0px 0px;
+    background-image: url(../images/field-background.svg);
+}
+
+#account-field-container {
+    top: 330px;
+    left: 540px;
+}
+
+#password-field-container {
+    top: 365px;
+    left: 540px;
+}
+
+@keyframes field-container {
+    from {
+        background-position: 4px 4px;
+    }
+}
+
+#account-field,
+#password-field,
+#account-field-asterisk,
+#password-field-asterisk {
+    outline: none;
+    position: absolute;
+    display: block;
+    width: 200px;
+    height: 25px;
+    background-color: transparent;
+    top: 0px;
+    right: 0px;
+    border: none;
+    padding-left: 65px;
+    color: transparent;
+    caret-color: #bec2c6;
+    font-family: "Roboto Mono", monospace;
+}
+
+#account-field-asterisk,
+#password-field-asterisk {
+    color: #bec2c6;
+}
+
+#account-field::selection,
+#password-field::selection {
+    color: transparent;
+    background-color: #ddd;
+}
