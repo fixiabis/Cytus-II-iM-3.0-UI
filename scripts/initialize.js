@@ -175,7 +175,33 @@ function initialize() {
 
     applyStyle(mainView, {
         display: "",
+        transformOrigin: "center",
         transitionProperty: "all",
         transitionDuration: "1s",
     });
+
+    const mainViewWidth = 1280;
+    const mainViewHeight = 720;
+    const initialWindowWidth = window.innerWidth;
+    const initialWindowHeight = window.innerHeight;
+
+    window.addEventListener("resize", () => {
+        const windowWidth = Math.max(initialWindowWidth, window.innerWidth);
+        const windowHeight = Math.max(initialWindowHeight, window.innerHeight);
+        const widthRatio = windowWidth / mainViewWidth;
+        const heightRatio = windowHeight / mainViewHeight;
+        const scale = Math.min(widthRatio, heightRatio);
+        const rotatedWidthRatio = windowHeight / mainViewWidth;
+        const rotatedHeightRatio = windowWidth / mainViewHeight;
+        const rotatedScale = Math.min(rotatedWidthRatio, rotatedHeightRatio);
+
+        if (rotatedScale > scale) {
+            mainView.style.transform = `scale(${rotatedScale}) rotate(90deg)`;
+        }
+        else {
+            mainView.style.transform = `scale(${scale})`;
+        }
+    });
+
+    window.dispatchEvent(new Event("resize"));
 }
