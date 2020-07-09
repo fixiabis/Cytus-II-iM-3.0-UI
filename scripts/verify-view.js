@@ -48,6 +48,7 @@ async function verifyAnimation() {
         transform: `translateX(0px)`,
     });
 
+    /** 短線群組，供顏色切換 */
     const shortLineGroupsForSwitch = [
         {
             from: [topLeftShortLine1, topRightShortLine1, bottomLeftShortLine1, bottomRightShortLine1],
