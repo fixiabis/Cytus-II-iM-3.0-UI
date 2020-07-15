@@ -1,4 +1,4 @@
-#rolling-dots {
+.rolling-dots {
     animation: rolling-dots 2s infinite linear;
 }
 
@@ -8,22 +8,23 @@
     }
 }
 
-#account-field-container,
-#password-field-container {
+.account-field-container,
+.password-field-container {
     position: absolute;
     width: 200px;
     height: 25px;
     animation: field-container 0.25s infinite linear;
     background-position: 0px 0px;
     background-image: url(../images/field-background.svg);
+    z-index: 10000;
 }
 
-#account-field-container {
+.account-field-container {
     top: 330px;
     left: 540px;
 }
 
-#password-field-container {
+.password-field-container {
     top: 365px;
     left: 540px;
 }
@@ -34,10 +35,10 @@
     }
 }
 
-#account-field,
-#password-field,
-#account-field-asterisk,
-#password-field-asterisk {
+.account-field,
+.password-field,
+.account-field-asterisk,
+.password-field-asterisk {
     outline: none;
     position: absolute;
     display: block;
@@ -53,13 +54,13 @@
     font-family: "Roboto Mono", monospace;
 }
 
-#account-field-asterisk,
-#password-field-asterisk {
+.account-field-asterisk,
+.password-field-asterisk {
     color: #bec2c6;
 }
 
-#account-field::selection,
-#password-field::selection {
+.account-field::selection,
+.password-field::selection {
     color: transparent;
     background-color: #ddd;
 }
