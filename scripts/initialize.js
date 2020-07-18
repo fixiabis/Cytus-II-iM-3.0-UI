@@ -149,16 +149,16 @@ function initialize() {
         const widthRatio = windowWidth / layoutContainerWidth;
         const heightRatio = windowHeight / layoutContainerHeight;
         const scale = Math.min(widthRatio, heightRatio);
-        const rotatedWidthRatio = windowHeight / layoutContainerWidth;
-        const rotatedHeightRatio = windowWidth / layoutContainerHeight;
-        const rotatedScale = Math.min(rotatedWidthRatio, rotatedHeightRatio);
+        // const rotatedWidthRatio = windowHeight / layoutContainerWidth;
+        // const rotatedHeightRatio = windowWidth / layoutContainerHeight;
+        // const rotatedScale = Math.min(rotatedWidthRatio, rotatedHeightRatio);
 
-        if (rotatedScale > scale) {
-            layoutContainer.style.transform = `scale(${rotatedScale}) rotate(90deg)`;
-        }
-        else {
+        // if (rotatedScale > scale) {
+        //     layoutContainer.style.transform = `scale(${rotatedScale}) rotate(90deg)`;
+        // }
+        // else {
             layoutContainer.style.transform = `scale(${scale})`;
-        }
+        // }
     });
 
     window.dispatchEvent(new Event("resize"));
